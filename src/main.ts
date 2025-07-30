@@ -9,6 +9,9 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
+      transformOptions: {
+        exposeUnsetFields: false,
+      },
     }),
   );
   await app.listen(process.env.PORT ?? 3000);
